@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Text-tool</title>
+    <style>
+       body
+        {
+            font-family: cursive;
+        }
+        .app-name {
+            text-align: center;
+            margin-bottom: 50px;
+            background-color: #e692ce;
+            margin: 0 550px;
+            border-radius: 25px 0 25px 0;
+            color: #72204f;
+            font-size: 40px;
+        }
+
+        .heading {
+            text-align: center;
+            color: purple;
+        }
+
+        .container {
+            display: block;
+            height: 250px;
+            width: 60%;
+            border: 5px solid #c50588;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 30px;
+            padding: 10px;           
+            color: #ee3ba0;
+            font-size: larger;
+            font-weight: bold;
+            text-align: center;
+            background-color: #efbee9;
+        }
+        p{
+            color: #e7108a;
+            font-size: larger;
+            font-weight: bold;
+        }
+        .Result-text {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .A {
+            margin-top: 40px;
+            height: 70px;
+            width: 170px;
+            background-color: #67dc67;
+            border-color: #6be17e;
+            border: solid 2px;
+            color: #0b5102;
+            font-size: 30px;
+            border-radius: 10px;
+            font-family: cursive;
+        }
+        .B{
+            margin-top: 40px;
+            height: 70px;
+            width: 170px;
+            background-color: #f57476;
+            border-color: #daa4a4;
+            border: solid 2px;
+            color: #f30707;
+            font-size: 30px;
+            border-radius: 10px;
+            font-family: cursive;
+        }
+        .C{
+            margin-top: 40px;
+            height: 70px;
+            width: 170px;
+            background-color: #eb85a0;
+            border-color: #be0aaf;
+            border: solid 2px;
+            color: #f80747;
+            font-size: 30px;
+            border-radius: 10px;
+            font-family: cursive;
+        }
+        .D{
+            margin-top: 40px;
+            height: 70px;
+            width: 170px;
+            background-color: #9895eb;
+            border-color: #1e11d6;
+            border: solid 2px;
+            color: #16035a;
+            font-size: 30px;
+            border-radius: 10px;
+            font-family: cursive;
+        }
+
+        .A:hover
+        {
+            width: 210px;
+        }
+        .B:hover
+        {
+            width: 210px;
+        }
+        .C:hover
+        {
+            width: 210px;
+        }
+        .D:hover
+        {
+            width: 210px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="app-name">TextMaker</h1>
+    <h2 class="heading">
+        Write Your Text Here.....
+    </h2>
+    <input type="text" class="container" id="input-text">
+
+    <p class="Result-text" id="resultText"></p>
+
+    <div class="btn-container">
+        <button type="button" class="A" onclick="ActionResult('UPPERCASE')">
+            UpperCase
+        </button>
+        <button type="button" class="B" onclick="ActionResult('LowerCase')">
+            LowerCase
+        </button>
+        <button type="button" class="C" onclick="ActionResult('CharCount')">
+            CharCount
+        </button>
+        <button type="button" class="D" onclick="ActionResult('WordCount')">
+            WordCount
+        </button>
+    </div>
+
+    <script>
+        function ActionResult(action) {
+            const inputText = document.getElementById("input-text")
+            const resultText = document.getElementById("resultText")
+
+            if (action == 'UPPERCASE') {
+                resultText.innerText = inputText.value.toUpperCase();
+            }
+            else if (action == 'LowerCase') {
+                resultText.innerText = inputText.value.toLowerCase();
+            }
+            else if (action == 'CharCount') {
+                resultText.innerText = (`The Character Count of given text is ${inputText.value.length}`);
+            }
+            else {
+                resultText.innerText = (`The Word Count of given text is ${inputText.value.split(" ").length}`);
+
+            }
+        }
+    </script>
